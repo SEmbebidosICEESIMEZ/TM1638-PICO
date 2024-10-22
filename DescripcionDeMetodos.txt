@@ -1,0 +1,20 @@
+1. tm1638.TM1638(stb, clk, dio): Constructor que inicializa una instancia de la clase TM1638. Los parámetros son:
+  stb (Pin): Pin de selección de chip (strobe).
+  clk (Pin): Pin de reloj.
+  dio (Pin): Pin de entrada/salida de datos.
+  Estos pines son utilizados para la comunicación con el chip TM1638.
+
+2. tm.number(value): Este método muestra un número en el display de 7 segmentos. Toma como argumento:
+  value: El número a mostrar en el display (hasta 8 dígitos). Internamente convierte el número en un formato que el TM1638 puede mostrar en sus 8 posiciones.
+
+3. tm.led(position, state): Controla el estado de un LED individual. Toma dos argumentos:
+  position: La posición del LED (entre 0 y 7).
+  state: Un valor booleano (True para encender el LED, False para apagarlo).
+
+4. tm.leds(pattern): Controla los 8 LEDs simultáneamente usando un patrón de bits. Toma un argumento:
+  pattern: Un número binario de 8 bits donde cada bit representa el estado de un LED (1 para encendido, 0 para apagado). Por ejemplo, 0b01010101 encendería los LEDs en posiciones alternas.
+
+5. tm.show(text): Muestra una cadena de caracteres en el display. Toma un argumento:
+  text: La cadena de caracteres (hasta 8 caracteres) a mostrar en el display.
+
+6. tm.keys(): Lee el estado de los botones conectados al TM1638. Devuelve un entero de 8 bits, donde cada bit representa el estado de un botón (1 si está presionado, 0 si no lo está).
